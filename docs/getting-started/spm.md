@@ -2,7 +2,7 @@
 
 The [Swift Package Manager](https://swift.org/package-manager/) (SPM) is used for building your project's source code and dependencies. Since Vapor relies heavily on SPM, it's a good idea to understand the basics of how it works.
 
-SPM is similar to Cocoapods, Ruby gems, and NPM. You can use SPM from the command line with commands like `swift build` and `swift test` or with compatible IDEs. However, unlike some other package managers, there is no central package index for SPM packages. SPM instead leverages URLs to Git repositories and versions dependencies using [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging). 
+SPM is similar to Cocoapods, Ruby gems, and NPM. You can use SPM from the command line with commands like `swift build` and `swift test` or with compatible IDEs. However, unlike some other package managers, there is no central package index for SPM packages. SPM instead leverages URLs to Git repositories and versions dependencies using [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging).
 
 ## Package Manifest
 
@@ -17,10 +17,10 @@ import PackageDescription
 let package = Package(
     name: "MyApp",
     platforms: [
-       .macOS(.v12)
+       .macOS(.v13)
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.76.0"),
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.77.1"),
     ],
     targets: [
         .executableTarget(
@@ -41,7 +41,7 @@ Each part of the manifest is explained in the following sections.
 
 ### Tools Version
 
-The very first line of a package manifest indicates the Swift tools version required. This specifies the minimum version of Swift that the package supports. The Package description API may also change between Swift versions, so this line ensures Swift will know how to parse your manifest. 
+The very first line of a package manifest indicates the Swift tools version required. This specifies the minimum version of Swift that the package supports. The Package description API may also change between Swift versions, so this line ensures Swift will know how to parse your manifest.
 
 ### Package Name
 
@@ -77,18 +77,18 @@ Below is the typical folder structure for an SPM package.
 └── Package.swift
 ```
 
-Each `.target` or `.executableTarget` corresponds to a folder in the `Sources` folder. 
+Each `.target` or `.executableTarget` corresponds to a folder in the `Sources` folder.
 Each `.testTarget` corresponds to a folder in the `Tests` folder.
 
 ## Package.resolved
 
-The first time you build your project, SPM will create a `Package.resolved` file that stores the version of each dependency. The next time you build your project, these same versions will be used even if newer versions are available. 
+The first time you build your project, SPM will create a `Package.resolved` file that stores the version of each dependency. The next time you build your project, these same versions will be used even if newer versions are available.
 
 To update your dependencies, run `swift package update`.
 
 ## Xcode
 
-If you are using Xcode 11 or greater, changes to dependencies, targets, products, etc will happen automatically whenever the `Package.swift` file is modified. 
+If you are using Xcode 11 or greater, changes to dependencies, targets, products, etc will happen automatically whenever the `Package.swift` file is modified.
 
 If you want to update to the latest dependencies, use File &rarr; Swift Packages &rarr; Update To Latest Swift Package Versions.
 

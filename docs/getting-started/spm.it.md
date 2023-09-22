@@ -17,11 +17,10 @@ import PackageDescription
 let package = Package(
     name: "MyApp",
     platforms: [
-       .macOS(.v12)
+       .macOS(.v13)
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git",
-        from: "4.76.0"),
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.77.1"),
     ],
     targets: [
         .executableTarget(

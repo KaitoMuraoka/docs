@@ -1,6 +1,6 @@
 # Swift Package Manager
 
-Über den [Swift Package Manager](https://www.swift.org/package-manager/) können verschiedene Pakete in einem Projekt zusammengefasst und eingebunden werden. Damit ist der Manager ähnlich zu anderen Lösungen, wie CocoaPods, Ruby gems oder NPM. Ein offizielles, zentrales Paketeregister gibt es allerdings nicht, daher greift der Manager stattdessen über Git auf die jeweiligen Pakete zu. 
+Über den [Swift Package Manager](https://www.swift.org/package-manager/) können verschiedene Pakete in einem Projekt zusammengefasst und eingebunden werden. Damit ist der Manager ähnlich zu anderen Lösungen, wie CocoaPods, Ruby gems oder NPM. Ein offizielles, zentrales Paketeregister gibt es allerdings nicht, daher greift der Manager stattdessen über Git auf die jeweiligen Pakete zu.
 
 ### Paketbeschreibung
 
@@ -13,10 +13,10 @@ import PackageDescription
 let package = Package(
     name: "MyApp",
     platforms: [
-       .macOS(.v12)
+       .macOS(.v13)
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.76.0"),
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.77.1"),
     ],
     targets: [
         .executableTarget(

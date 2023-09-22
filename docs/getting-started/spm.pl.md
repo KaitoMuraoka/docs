@@ -17,10 +17,10 @@ import PackageDescription
 let package = Package(
     name: "MyApp",
     platforms: [
-       .macOS(.v12)
+       .macOS(.v13)
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.76.0"),
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.77.1"),
     ],
     targets: [
         .executableTarget(
@@ -77,18 +77,18 @@ Poniżej znajduje się typowa struktura folderów dla pakietu SPM.
 └── Package.swift
 ```
 
-Każdy `.target` lub `.executableTarget` odpowiada folderowi w folderze `Sources`. 
+Każdy `.target` lub `.executableTarget` odpowiada folderowi w folderze `Sources`.
 Każdy `.testTarget` odpowiada folderowi w folderze `Tests`.
 
 ## Package.resolved
 
-Przy pierwszej kompilacji projektu, SPM utworzy plik `Package.resolved`, który przechowuje wersję każdej zależności. Przy następnej kompilacji projektu te same wersje zostaną użyte, nawet jeśli dostępne są nowsze wersje. 
+Przy pierwszej kompilacji projektu, SPM utworzy plik `Package.resolved`, który przechowuje wersję każdej zależności. Przy następnej kompilacji projektu te same wersje zostaną użyte, nawet jeśli dostępne są nowsze wersje.
 
 Aby zaktualizować zależności, uruchom `swift package update`.
 
 ## Xcode
 
-Jeśli korzystasz z Xcode 11 lub nowszego, zmiany w zależnościach, celach, produktach itp. będą wprowadzane automatycznie za każdym razem, gdy plik `Package.swift` zostanie zmodyfikowany. 
+Jeśli korzystasz z Xcode 11 lub nowszego, zmiany w zależnościach, celach, produktach itp. będą wprowadzane automatycznie za każdym razem, gdy plik `Package.swift` zostanie zmodyfikowany.
 
 Jeśli chcesz zaktualizować do najnowszych zależności, użyj File &rarr; Swift Packages &rarr; Update To Latest Swift Package Versions.
 

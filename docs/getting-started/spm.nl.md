@@ -17,10 +17,10 @@ import PackageDescription
 let package = Package(
     name: "MyApp",
     platforms: [
-       .macOS(.v12)
+       .macOS(.v13)
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.76.0"),
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.77.1"),
     ],
     targets: [
         .executableTarget(
@@ -77,18 +77,18 @@ Hieronder ziet u de typische mappenstructuur voor een SPM-pakket.
 └── Package.swift
 ```
 
-Elk `.target` of `.executableTarget` komt overeen met een map in de `Sources` map. 
+Elk `.target` of `.executableTarget` komt overeen met een map in de `Sources` map.
 Elk `.testTarget` komt overeen met een map in de `Tests` map.
 
 ## Package.resolved
 
-De eerste keer dat u uw project bouwt, zal SPM een `Package.resolved` bestand maken dat de versie van elke dependency opslaat. De volgende keer dat u uw project bouwt, zullen dezelfde versies worden gebruikt, zelfs als er nieuwere versies beschikbaar zijn. 
+De eerste keer dat u uw project bouwt, zal SPM een `Package.resolved` bestand maken dat de versie van elke dependency opslaat. De volgende keer dat u uw project bouwt, zullen dezelfde versies worden gebruikt, zelfs als er nieuwere versies beschikbaar zijn.
 
 Om uw dependencies te updaten, voert u `swift package update` uit.
 
 ## Xcode
 
-Als je Xcode 11 of hoger gebruikt, zullen wijzigingen in afhankelijkheden, targets, producten, etc automatisch gebeuren wanneer het `Package.swift` bestand wordt gewijzigd. 
+Als je Xcode 11 of hoger gebruikt, zullen wijzigingen in afhankelijkheden, targets, producten, etc automatisch gebeuren wanneer het `Package.swift` bestand wordt gewijzigd.
 
 Als je wilt updaten naar de laatste afhankelijkheden, gebruik dan File &rarr; Swift Packages &rarr; Update To Latest Swift Package Versions.
 
